@@ -15,7 +15,6 @@ public class SLList {
         first = null;
         size = 0;
     }
-
     public SLList(int x) {
         first = new IntNode(x, null);
         size = 1;
@@ -39,6 +38,7 @@ public class SLList {
 
     /** Adds an item to the end of the list. */
     public void addLast(int x) {
+        if(first==null){first=new IntNode(x); return;}
         IntNode p = first;
 
         /* Advance p to the end of the list. */
@@ -51,6 +51,7 @@ public class SLList {
     /** Crashes when you call addLast on an empty SLList. Fix it. */
     public static void main(String[] args) {
         SLList x = new SLList();
+        
         x.addLast(5);
     }
 }
